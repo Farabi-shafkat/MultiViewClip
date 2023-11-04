@@ -1,5 +1,5 @@
 # MultiViewClip
-A reimplementation of Multiview-Clip for multimodal sarcasm detection
+A reimplementation of Multiview-Clip for multimodal sarcasm detection from the paper "MMSD2.0: Towards a Reliable Multi-modal Sarcasm Detection System"
 
 The dataset can be accessed from here: https://github.com/JoeYing1019/MMSD2.0/tree/main/data
 
