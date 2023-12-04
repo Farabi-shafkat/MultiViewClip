@@ -8,15 +8,15 @@ import json
 
 
 class dataset(Dataset):
-    def __init__(self, mode = 'train',data_dir = 'Data',args=None):
+    def __init__(self, mode = 'train',data_dir = 'Data',test_dir = 'Data',args=None):
         self.image_dir = os.path.join(data_dir,'Image','dataset_image')
-        data_str = 'text_json_final' if args.dataset == 'MMSD2.0' else 'text_json_clean'
+        #data_str = 'text_json_final' if args.dataset == 'MMSD2.0' else 'text_json_clean'
         if mode=='train':
-            self.text_dir = os.path.join(data_dir,data_str,'train.json')
+            self.text_dir = os.path.join(data_dir,'train.json')
         elif mode=='val':
-            self.text_dir = os.path.join(data_dir,data_str,'valid.json')
+            self.text_dir = os.path.join(data_dir,'valid.json')
         else:
-            self.text_dir = os.path.join(data_dir,data_str,'test.json')
+            self.text_dir = os.path.join(test_dataset,'test.json')
         
         #loading the text data
         self.data = []

@@ -8,7 +8,7 @@ from model import MV_CLIP
 from datasets import dataset 
 
 def predict(args):
-    test_dataset = dataset(mode='test',data_dir=args.data_dir,args=args)
+    test_dataset = dataset(mode='test',data_dir=args.test_dataset,args=args)
     test_dataloader = DataLoader(test_dataset,batch_size = 32, shuffle = False,collate_fn=dataset.collate_func)
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     model = MV_CLIP(device,args).to(device=device)
