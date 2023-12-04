@@ -7,6 +7,8 @@ Create a file named 'Data' in the project directory. Place the downloaded 'text_
 Download the image files and place them in 'Data\Image\dataset_image' folder
 
 The file structure should look like this: 
+- **Multilingual**
+- **Robustness Dataset**
 - **Data**
   - **Image**
     - **dataset_image**
@@ -35,12 +37,25 @@ The file structure should look like this:
 
 To train the model on MMSD dataset and then to test it, run the following command:  
 ```bash
-python main.py --data_dir 'Data' --dataset 'MMSD' --dropout 0.3  --lr 3e-4 --lr_clip 3e-7 --epoch 10
+python main.py --data_dir 'Data' --dataset 'Data/text_json_clean' --test_dataset 'Data/text_json_clean' --dropout 0.3  --lr 3e-4 --lr_clip 3e-7 --epoch 10
 ```
 To train the model on MMSD2.0 dataset and then to test, run the following command:  
 ```bash
-python main.py --data_dir 'Data' --dataset 'MMSD2.0' --dropout 0.1  --lr 5e-4 --lr_clip 1e-6 --epoch 10
+python main.py --data_dir 'Data' --dataset 'Data/text_json_final' --test_dataset 'Data/text_json_clean' --dropout 0.1  --lr 5e-4 --lr_clip 1e-6 --epoch 10
 ```
+To translate the MMSD2.0 dataset into multilingual data, open and execute the cells of 'translate.ipynb' notebook
+
+To calcualte the similarity of translations and filter them, open and exectue the cells of 'translation_similarity.ipynb' notebook
+
+To train and test the model on the translated data, open and execture the cells of 'train_multilingual.ipynb' notebook
 
 
+To test the model on typos, run the following command: 
+```bash
+python main.py --data_dir 'Data' --dataset 'Data/text_json_clean' --test_dataset 'Robustness_datasets/Typo' --dropout 0.3  --lr 3e-4 --lr_clip 3e-7 --epoch 10
+```
+To test the model on Synonyms, run the following command: 
+```bash
+python main.py --data_dir 'Data' --dataset 'Data/text_json_clean' --test_dataset 'Robustness_datasets/Synonym' --dropout 0.3  --lr 3e-4 --lr_clip 3e-7 --epoch 10
+```
 
