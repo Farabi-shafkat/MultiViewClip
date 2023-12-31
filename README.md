@@ -1,6 +1,8 @@
 # MultiViewClip
 A reimplementation of Multiview-Clip for multimodal sarcasm detection from the paper "MMSD2.0: Towards a Reliable Multi-modal Sarcasm Detection System"
 
+To read our finding and analysis of robustness and multilinguality, please refer to the report : https://drive.google.com/file/d/1rllzi2elDymhkTklHc2OHfD586BsVsVY/view?usp=sharing
+
 The dataset can be accessed from here: https://github.com/JoeYing1019/MMSD2.0/tree/main/data
 
 Create a file named 'Data' in the project directory. Place the downloaded 'text_json_clean' and 'text_json_final' folders inside this newly created 'Data' folder. 
